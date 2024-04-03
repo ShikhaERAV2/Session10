@@ -357,3 +357,14 @@ class ModelTrainer:
             test_loss, correct, len(test_loader.dataset),
             100. * correct / len(test_loader.dataset)))
 
+    def display_plot(self):
+      fig, axs = plt.subplots(2,2,figsize=(15,10))
+      axs[0, 0].plot(self.train_losses)
+      axs[0, 0].set_title("Training Loss")
+      axs[1, 0].plot(self.train_acc)
+      axs[1, 0].set_title("Training Accuracy")
+      axs[0, 1].plot(self.test_losses)
+      axs[0, 1].set_title("Test Loss")
+      axs[1, 1].plot(self.test_acc)
+      axs[1, 1].set_title("Test Accuracy")
+
